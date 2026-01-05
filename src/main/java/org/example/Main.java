@@ -2,16 +2,24 @@ package org.example;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-public class Main {
-    static void main() {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        IO.println(String.format("Hello and welcome!"));
+public class Main
+{
+public static void main(String[] args)
+    {
+        VendingMachineImpl vendingMachine = new VendingMachineImpl();
+        vendingMachine.addProduct(new Snack(1, "Chips", 15, 10));
+        vendingMachine.addProduct(new Beverage(2, "Soda", 10, 20));
+        vendingMachine.addProduct(new Snack(3, "Chocolate", 20, 5));
+        vendingMachine.addProduct(new Beverage(4, "Water", 5, 30));
+        vendingMachine.addProduct(new Beverage(5, "Juice", 12, 15));
+        vendingMachine.addProduct(new Fruit(6, "Apple", 8, 25));
+        vendingMachine.addProduct(new Fruit(7, "Banana", 6, 30));
+        ConsoleUI consoleUI = new ConsoleUI(vendingMachine);
+        consoleUI.start();
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            IO.println("i = " + i);
+
+
+
         }
     }
-}
+
